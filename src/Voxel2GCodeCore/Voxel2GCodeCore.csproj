@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCB34B54-0384-47A9-98E1-E4F43F520023}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Voxel2GCodeCore</RootNamespace>
+    <AssemblyName>Voxel2GCodeCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Voxel2GCodeCore.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CGeometrica">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\Monolith\CGeometrica.dll</HintPath>
+    </Reference>
+    <Reference Include="CSerializer">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\Monolith\CSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="MalachiteNet">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\Monolith\MalachiteNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MonolithCore">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\Monolith\MonolithCore.dll</HintPath>
+    </Reference>
+    <Reference Include="MonolithLib">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\Monolith\MonolithLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Geometry\V2GCurve.cs" />
+    <Compile Include="Classes\Geometry\V2GLine.cs" />
+    <Compile Include="Classes\Geometry\V2GPoint.cs" />
+    <Compile Include="Classes\Geometry\V2GVoxelPoint.cs" />
+    <Compile Include="Classes\Instructions\_PrintMovementOld.cs" />
+    <Compile Include="Classes\Instructions\V2GMovement.cs" />
+    <Compile Include="Classes\Instructions\_PrintSegmentOld.cs" />
+    <Compile Include="Classes\Instructions\V2GPrintSegment.cs" />
+    <Compile Include="Classes\Geometry\V2GPrintable.cs" />
+    <Compile Include="Classes\Instructions\V2GInstruction.cs" />
+    <Compile Include="Classes\V2GModel.cs" />
+    <Compile Include="Classes\V2GPath.cs" />
+    <Compile Include="Classes\Geometry\V2GPrintPosition.cs" />
+    <Compile Include="Classes\Geometry\V2GPrintPolyline.cs" />
+    <Compile Include="Classes\V2GSettings.cs" />
+    <Compile Include="Classes\V2GSlice.cs" />
+    <Compile Include="Classes\V2GState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Utilities\V2GPrint.cs" />
+    <Compile Include="Classes\Utilities\V2GGeometry.cs" />
+    <Compile Include="Classes\Utilities\V2GMath.cs" />
+    <Compile Include="Classes\Utilities\V2GVoxel.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
