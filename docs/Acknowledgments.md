@@ -4,9 +4,7 @@
 
 #### Autodesk
 
-The development of Voxel2GCode was sponsored by Autodesk, under the guidance of Matt Jezyk, Panagiotis Michalatos and all the [Generative Design Team](http://www.autodesk.com/solutions/generative-design), which played a huge role in making this project possible. They let me put my own vision into this project and provided me incredible resources. (Having a ZMorph of my own for prototyping clearly speeded up the research and development process.) Special thanks to Panagiotis Michalatos, for his invaluable insight on the overall philosophy of the project and help with code implementation.
-
-[Rick Rundell, Adam Allard, Tim Brinkerhoff, Joe Aronis, Bevin Lin, Nathan King and the rest of the team. A big shout-out to Tom, Lilli, Aaron, Sriram, Zack, Peter, Neal, Michael, Anthony and Thord; love you guys!]
+The development of Voxel2GCode was sponsored by Autodesk, under the guidance of Matt Jezyk, Panagiotis Michalatos and all the [Generative Design Team](http://www.autodesk.com/solutions/generative-design), which played a huge role in making this project possible. They let me put my own vision into this project and provided me incredible resources. (Having a ZMorph of my own for prototyping clearly speeded up the research and development process.) Special thanks to Panagiotis Michalatos, for his invaluable insight on the overall philosophy of the project and help with code implementation. Also, I feel humbled of the chance to work with Andrew Payne, Zach Kron, Peter Boyer, Neal Burham, Racel Williams, Lilli Smith, Michael Kirschner, Tom, Anthony Hauck, Thord, Rick Rundell, Adam Allard, Tim Brinkerhoff, Joe Aronis, Bevin Lin, Nathan King and the rest of the team.
 
 My colleagues—Jose Luis Garcia del Castillo, Keith Alfaro, Omid Oliyan, and Varvara Toulkeridou—made my summer incredibly fun: 👌. You should check out the projects they’ve been working on.
 
