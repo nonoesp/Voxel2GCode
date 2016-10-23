@@ -16,7 +16,7 @@ namespace Voxel2GCodeGH
         public V2GH_Export()
           : base("Export G-code", "Export",
               "Write a string of text to file",
-              "V2G", "Generate")
+              "V2G", "G-code")
         {
         }
 

@@ -14,9 +14,9 @@ namespace Voxel2GCodeGH
         /// Initializes a new instance of the V2GPrinter class.
         /// </summary>
         public V2GH_Printer()
-          : base("Printer", "V2GPrinter",
+          : base("Construct Printer", "V2GPrinter",
               "Generates printable G-code from printable geometry objects.",
-              "V2G", "Generate")
+              "V2G", "G-code")
         {
         }
 

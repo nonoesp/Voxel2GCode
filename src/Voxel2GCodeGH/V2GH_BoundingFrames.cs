@@ -18,7 +18,7 @@ namespace Voxel2GCodeGH
         public V2GH_BoundingFrames()
           : base("Get Bounding Frames", "BoundingFrames",
               "Get a set of bounding frames for a given geometry.",
-              "V2G", "Utilities")
+              "V2G", "Slicer")
         {
         }
 

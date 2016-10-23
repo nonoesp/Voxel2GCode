@@ -13,11 +13,65 @@ namespace Voxel2GCodeRhino.Utilities
     /// </summary>
     public static class V2GRhinoGeometry
     {
-        public static void AddOne(this V2GGeometry vGeometry)
+        /// <summary>
+        /// Extract bounding Z frames -- slice planes -- of a given geometry.
+        /// </summary>
+        /// <param name="G"></param>
+        /// <param name="XSpan"></param>
+        /// <param name="YSpan"></param>
+        /// <param name="ZSpan"></param>
+        /// <param name="DXSpan"></param>
+        /// <param name="DYSpan"></param>
+        /// <param name="AngleDegrees"></param>
+        /// <returns></returns>
+        public static List<Plane> SlicePlanes(
+            GeometryBase G,
+            double LayerHeight,
+            double OffsetBottomGlobal = 0,
+            double OffsetBottom = 0,
+            double OffsetTop = 0,
+            bool ShouldForceTop = false)
         {
-            vGeometry.value += 1;
-        }
+            List<Plane> Frames = new List<Plane>();
 
+            // Default BoundingBox
+            BoundingBox bb = G.GetBoundingBox(true);
+            Point3d[] corners = bb.GetCorners();
+            Line ZLine = new Line(corners[0], corners[4]);
+            double ZLineLength = ZLine.Length;
+
+            // Safety
+            int FrameCap = 150;
+            if (ZLineLength / LayerHeight > FrameCap - 1) LayerHeight = ZLine.Length / (FrameCap - 1);
+
+            // Z Frames
+            double ZAmount = ZLineLength / LayerHeight;
+            bool HasTopLayer = false;
+
+            for (double i = 0; i <= ZAmount; i++)
+            {
+                double distance = i * LayerHeight + OffsetBottomGlobal;
+                if (i == 0) distance += OffsetBottom;
+                if (distance == ZLineLength) HasTopLayer = true;
+                if (distance == ZLineLength || !ShouldForceTop && LayerHeight * (i + 1) + OffsetBottomGlobal > ZLineLength) distance += -OffsetTop;
+                double param = distance / ZLineLength;
+                if (param <= 1)
+                {
+                    Plane pl;
+                    ZLine.ToNurbsCurve().PerpendicularFrameAt(param, out pl);
+                    Frames.Add(pl);
+                }
+            }
+            if (ShouldForceTop && !HasTopLayer)
+            {
+                Plane pl;
+                double param = 1 - OffsetTop / ZLineLength;
+                if (param > 1) param = 1;
+                ZLine.ToNurbsCurve().PerpendicularFrameAt(param, out pl);
+                Frames.Add(pl);
+            }
+            return Frames;
+        }
 
         /// <summary>
         /// Extract bounding frames to slice a given geometry.
@@ -148,10 +202,5 @@ namespace Voxel2GCodeRhino.Utilities
 
             return Frames;
         }
-
-        public static int GetValue(this V2GGeometry vGeometry)
-        {
-           return vGeometry.value;
-        } 
     }
 }

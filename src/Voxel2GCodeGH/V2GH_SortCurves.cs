@@ -18,7 +18,7 @@ namespace Voxel2GCodeGH
         public V2GH_SortCurves()
           : base("Sort Curves to Print", "CurveSort",
               "Sort curves on the best path to print.",
-              "V2G", "Curve")
+              "V2G", "Slicer")
         {
         }
 

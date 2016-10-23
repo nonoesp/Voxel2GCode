@@ -19,7 +19,7 @@ namespace Voxel2GCodeGH
     public V2GH_PrintPolyline()
       : base("Construct PrintPolyline", "PrintPolyline",
           "Construct a PrintPolyline from a Polyline with printing properties.",
-          "V2G", "Construct")
+          "V2G", "G-code")
     {
           
     }

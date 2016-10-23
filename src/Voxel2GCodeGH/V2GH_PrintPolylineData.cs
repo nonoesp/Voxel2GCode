@@ -15,7 +15,7 @@ namespace Voxel2GCodeGH
         public V2GH_PrintPolylineData()
           : base("Extract PrintPolyline Data", "PrintPolylineData",
               "Extract the metadata of a PrintPolyline.",
-              "V2G", "Extract")
+              "V2G", "G-code")
         {
         }
 

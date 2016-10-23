@@ -21,7 +21,7 @@ namespace Voxel2GCodeGH
         /// </summary>
         public V2GH_VoxelPoint()
           : base("Create VoxelPoint", "VoxelPoint",
-              "VoxelPoint from a Voxel field and a Point3d.",
+              "VoxelPoint from a Monolith voxel field and a Point3d.",
               "V2G", "Voxel")
         {
         }
@@ -31,7 +31,7 @@ namespace Voxel2GCodeGH
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddGenericParameter("Voxel", "Voxel", "Voxel field.", GH_ParamAccess.item);
+            pManager.AddGenericParameter("Voxel", "Voxel", "Monolith voxel field.", GH_ParamAccess.item);
             pManager.AddPointParameter("Point", "Point", "Point3d.", GH_ParamAccess.item);
         }
 

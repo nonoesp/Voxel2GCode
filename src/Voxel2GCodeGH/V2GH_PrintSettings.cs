@@ -14,9 +14,9 @@ namespace Voxel2GCodeGH
     /// Initializes a new instance of the V2GH_PrintSettings class.
     /// </summary>
     public V2GH_PrintSettings()
-      : base("Print Settings", "V2GSettings",
+      : base("Construct Printer Settings", "V2GSettings",
           "Create custom printing settings for a V2GPrinter",
-          "V2G", "Generate")
+          "V2G", "G-code")
     {
     }
 

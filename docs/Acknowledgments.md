@@ -22,6 +22,6 @@ Voxel2GCode uses Monolith libraries for voxel operations.
 
 ***
 
-I apologize if I you think you should be here and I forgot about you. If so, please, do let me know and I’ll add you!
+I apologize if you think you should be here and I forgot about you. If so, please do let me know and I’ll add you!
 
 Voxel2GCode was created and is maintained by [Nono Martínez Alonso](http://nono.ma).

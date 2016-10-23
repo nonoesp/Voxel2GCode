@@ -15,7 +15,7 @@ namespace Voxel2GCodeGH
         public V2GH_PrintPoint()
           : base("Construct PrintPoint", "PrintPoint",
               "Construct a PrintPoint from a Point3d.",
-              "V2G", "Construct")
+              "V2G", "G-code")
         {
         }
 

@@ -21,7 +21,7 @@ namespace Voxel2GCodeGH
         /// </summary>
         public V2GH_VoxelCurvePoints()
           : base("Get Voxel Curve Points", "VoxelCurvePoints",
-              "Get voxel gradient and contour curve points.",
+              "Get voxel gradient and contour curve points from a Monolith voxel field.",
               "V2G", "Voxel")
         {
         }
@@ -31,7 +31,7 @@ namespace Voxel2GCodeGH
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddGenericParameter("Voxel", "Voxel", "Voxel field.", GH_ParamAccess.item);
+            pManager.AddGenericParameter("Voxel", "Voxel", "Monolith voxel field.", GH_ParamAccess.item);
             pManager.AddPointParameter("Point", "Point", "Point3d.", GH_ParamAccess.item, new Point3d(0,0,0));
             pManager.AddIntegerParameter("Vector Type", "Vector Type", "(0) Contour vector projected to z plane (1) Gradient vector projected to z plane (2) 3D Gradient vector", GH_ParamAccess.item, 0);
             pManager.AddNumberParameter("Segment Length", "SegmentLength", "Length of each of the segments.", GH_ParamAccess.item, 0.0001);
