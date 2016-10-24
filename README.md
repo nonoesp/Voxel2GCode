@@ -4,9 +4,9 @@
 
 ![Material Gradients with Monolith](docs/img/main-header.jpg)
 
-`Voxel2GCode` is a project on early stages which aims for a flexible, customizable workflow for 3D printing, which started as part of the **Material Gradients with Monolith** project by [Nono Martínez Alonso](http://nono.ma) while working with the Autodesk Generative Design Group, during the summer of 2016. As an effort to simplify how instructions are sent to 3D printers, the project is structured to make the implementation of custom printing and slicing workflows easy, and to fabricate artifacts from geometric objects and voxel-based models with low cost multi-material 3D printers.
+`Voxel2GCode` is a project which aims for a flexible, customizable workflow for 3D printing, which started as part of the **Material Gradients with Monolith** project by [Nono Martínez Alonso](http://nono.ma) while working with the Autodesk Generative Design Group, during the summer of 2016. As an effort to simplify how instructions are sent to 3D printers, the project is structured to make the implementation of custom printing and slicing workflows easy, and to fabricate artifacts from geometric objects and voxel-based models with low cost multi-material 3D printers.
 
-[Tweet this](https://twitter.com/intent/tweet?text=Voxel2GCode by @nonoesp,%20transform%20geometric%20objects%20and%20voxel-based%20models%20into%203D-printable%20G-code%20instructions%20with%20%23gh3d%20and%20@DynamoBIM.).
+[Tweet this](https://twitter.com/intent/tweet?text=Voxel2GCode%20transforms%20geometry%20%26%20voxel-based%20models%20into%203D-printable%20instructions%20w/%20%23gh3d%20@DynamoBIM%20github.com/nonoesp/Voxel2GCode%20by%20@nonoesp).
 
 In a nutshell, Voxel2GCode provides five tools:
 * Voxel2GCodeCore as a standalone .NET library.
@@ -24,13 +24,14 @@ In a nutshell, Voxel2GCode provides five tools:
 ## Installation
 
 ### Voxel2GCodeCore
+
 * Download and install [Monolith](http://monolith.zone/download). (Voxel2GCode requires Monolith installed in your computer.)
 
 ### Voxel2GCode for Grasshopper and RhinoCommon
 
-* Download the Voxel2GCodeGH.gha
-* Copy it to your Grasshopper components folder.
-* You’ll need to copy Monolith dependencies to the components folder.
+* Download [Voxel2GCodeForGrasshopper.zip](http://gettingarchitecturedone.com/Voxel2GCodeForGrasshopper.zip)
+* Copy Voxel2GCodeGH.gha, Voxel2GCodeRhinoCommon.dll, and Voxel2GCodeCore.dll to your Grasshopper components folder.
+* In case you want to use the voxel components you'd have to install [Monolith](http://monolith.zone/download).
 
 ### Voxel2GCode for Dynamo and DesignScript
 
@@ -88,17 +89,25 @@ A .NET library for RhinoCommon-specific functions of Voxel2GCode. It subclasses 
 
 A Grasshopper for Rhino plugin.
 
-* *Construct PrintPoint (WIP)*
+#### G-code
+
+* Construct PrintPoint
 * Construct PrintPolyline
 * Construct Printer
-* Extract PrintPolylineData
-* *PrintSettings (TODO)*
+* Construct Printing Settings
+* Construct Printer
 * *PrintingBoundaries (TODO)*
-* Export G-code  
-&nbsp;
-* SortCurves
-* Get BoundingFrames
-&nbsp;
+* *Export G-code (TODO)*
+* Extract PrintPolylineData
+
+#### Slicer
+
+* Sort Curves
+* Get Bounding Frames
+* Get Slice Planes
+
+#### Voxel
+
 * Construct VoxelPoint
 * Get VoxelCurvePoints
 
