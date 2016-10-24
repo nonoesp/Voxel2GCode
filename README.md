@@ -15,28 +15,34 @@ In a nutshell, Voxel2GCode provides five tools:
 * Voxel2GCodeDesignScript for scripting with C# using DesignScript.
 * Voxel2GCodeDynamo as a Dynamo package.
 
+## Download
+
+* [Voxel2GCode.zip](http://gettingarchitecturedone.com/files/Voxel2GCode.zip)
+* The voxel utilities of V2G require you to install [Monolith](http://monolith.zone/download), everything else should work fine without it.
+
 ## Table of Contents
 
 * [Installation](#installation)
 * [Reference](#reference)
-* [Usage](#usage)
+* [Basic Usage](#basic-usage)
 
 ## Installation
 
-### Voxel2GCodeCore
-
-* Download and install [Monolith](http://monolith.zone/download). (Voxel2GCode requires Monolith installed in your computer.)
-
 ### Voxel2GCode for Grasshopper and RhinoCommon
 
-* Download [Voxel2GCodeForGrasshopper.zip](http://gettingarchitecturedone.com/Voxel2GCodeForGrasshopper.zip)
-* Copy Voxel2GCodeGH.gha, Voxel2GCodeRhinoCommon.dll, and Voxel2GCodeCore.dll to your Grasshopper components folder.
-* In case you want to use the voxel components you'd have to install [Monolith](http://monolith.zone/download).
+* Copy and paste all files inside the `Voxel2GCode for Grasshopper` into your Grasshopper components folder -- accessible via `Grasshopper > File > Special Folders > Components Folder`.
+* (In case you want to use the voxel components you'd have to install [Monolith](http://monolith.zone/download).)
 
 ### Voxel2GCode for Dynamo and DesignScript
 
 * Open a new Dynamo document.
 * Under the nodes tab, click on `Import`, and select the `Voxel2GCode for Dynamo.dll` library.
+* (In case you want to use the voxel components you'd have to install [Monolith](http://monolith.zone/download).)
+
+### Voxel2GCodeCore.dll
+
+* You can use the `Voxel2GCodeCore.dll` library, for instance, as a reference in your C# project, or to script inside Grasshopper components.
+* (In case you want to use the voxel components you'd have to install [Monolith](http://monolith.zone/download).)
 
 ## Reference
 
