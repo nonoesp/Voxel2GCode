@@ -51,7 +51,7 @@ namespace Voxel2GCodeCore
         /// Constructor of a printer.
         /// </summary>
         public V2GState() {
-           ///
+            ///
         }
 
         /// <summary>
@@ -150,15 +150,12 @@ namespace Voxel2GCodeCore
         /// <param name="p">A PrintPoint.</param>
         public void SetPosition(V2GPrintPosition p, StringBuilder s = null)
         {
-            s.Append("p.Z before adding .ZOffset: "+ p.Z);
-            p.Z += this.settings.ZOffset;
-            s.Append("p.Z after adding .ZOffset: " + p.Z);
-            //if (s != null && p.Z != this.Position.Z)
-            //{
-            //    if(this.settings.IsVerbose) s.Append("\n(Z Changed)");
-            //    this.ResetHead(s);
-            //}
-            this.Position = p;
+            if ( s != null && this.Position.Z != p.Z + this.settings.ZOffset )
+            {
+                //if(this.settings.IsVerbose) s.Append("\n(Z Changed)");
+                this.ResetHead(s);
+            }
+            this.Position = new V2GPrintPosition(p.X, p.Y, p.Z + this.settings.ZOffset);
         }
 
         /// <summary>
@@ -168,8 +165,7 @@ namespace Voxel2GCodeCore
         /// <returns></returns>
         public V2GPrintPosition PrintPointOnBase(V2GPrintPosition p)
         {
-            p.Z += this.settings.ZOffset;
-            return p;
+            return new V2GPrintPosition(p.X, p.Y, p.Z + this.settings.ZOffset);
         }
     }
 }
