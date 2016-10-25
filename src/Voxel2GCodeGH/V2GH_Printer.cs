@@ -31,9 +31,9 @@ namespace Voxel2GCodeGH
             pManager.AddGenericParameter("Settings", "Settings",
                 "Custom printing settings", 
                 GH_ParamAccess.item);
-            pManager.AddBooleanParameter("Verbose", "Verbose", 
-                "Display G-code comments.", 
-                GH_ParamAccess.item, false);
+            //pManager.AddBooleanParameter("Verbose", "Verbose", 
+            //   "Display G-code comments.", 
+            //    GH_ParamAccess.item, false);
         }
 
         /// <summary>
@@ -53,15 +53,14 @@ namespace Voxel2GCodeGH
             // Variables
             List<V2GPrintable> printables = new List<V2GPrintable>();
             V2GSettings settings = new V2GSettings();
-            bool IsVerbose = false;
 
             // Get Data
             DA.GetDataList(0, printables);
-            if (!DA.GetData(1, ref settings))
-            {
-                settings = new V2GSettings();
-            }
-            DA.GetData(2, ref IsVerbose);
+            DA.GetData(1, ref settings);
+            //if (!DA.GetData(1, ref settings))
+            //{
+            //   settings = new V2GSettings();
+            // }
 
             // Stuff
             System.Text.StringBuilder sb = new System.Text.StringBuilder();

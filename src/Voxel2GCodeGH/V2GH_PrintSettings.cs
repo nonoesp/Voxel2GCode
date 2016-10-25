@@ -60,6 +60,9 @@ namespace Voxel2GCodeGH
             pManager.AddNumberParameter("T1Temperature", "T1Temperature",
                 "Temperature of the secondary extruder head in celsius degrees.",
                 GH_ParamAccess.item, 200.0);
+            pManager.AddBooleanParameter("Verbose", "Verbose",
+                "Generate G-code with inline comments.",
+                GH_ParamAccess.item, false);
 
         }
 
@@ -87,6 +90,7 @@ namespace Voxel2GCodeGH
             double BedTemperature = 60.0;
             double T0Temperature = 200.0;
             double T1Temperature = 200.0;
+            bool IsVerbose = false;
 
             DA.GetData(0, ref StartPoint);
             DA.GetData(1, ref EndPoint);
@@ -95,7 +99,8 @@ namespace Voxel2GCodeGH
             DA.GetData(4, ref ZOffset);
             DA.GetData(5, ref BedTemperature);
             DA.GetData(6, ref T0Temperature);
-            DA.GetData(6, ref T1Temperature);
+            DA.GetData(7, ref T1Temperature);
+            DA.GetData(8, ref IsVerbose);
 
             V2GSettings settings = new V2GSettings();
             settings.StartPoint = new V2GPrintPosition(V2GH.V2GPoint(StartPoint));
@@ -106,6 +111,7 @@ namespace Voxel2GCodeGH
             settings.BedTemperature = BedTemperature;
             settings.T0Temperature = T0Temperature;
             settings.T1Temperature = T1Temperature;
+            settings.IsVerbose = IsVerbose;
 
             DA.SetData(0, settings);
         }

@@ -34,7 +34,7 @@ namespace Voxel2GCodeCore.Instructions
             {
                 if (printer.settings.IsVerbose) s.Append("\n(A. PrintMovement) (Printer has to move)");
                 printer.F = this.PrintPosition.Speed;
-                printer.SetPosition(this.PrintPosition);
+                printer.SetPosition(this.PrintPosition, s);
 
                 // Move
                 s.Append("\nG1");

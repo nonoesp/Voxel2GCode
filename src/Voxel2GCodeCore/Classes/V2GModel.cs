@@ -47,13 +47,11 @@ namespace Voxel2GCodeCore
                 V2GInstruction seg;
                 if (path.Segments.Count == 0)
                 {
-                    // First: PrintMovement
-                    seg = new V2GMovement(PrintPosition, 7200.0);
+                    seg = new V2GMovement(PrintPosition, 7200.0); // First: PrintMovement
                 }
                 else
                 {
-                    // Others: PrintSegment
-                    seg = new V2GPrintSegment(PrintPosition);
+                    seg = new V2GPrintSegment(PrintPosition); // Others: PrintSegment
                 }
                 path.Segments.Add(seg);
             }

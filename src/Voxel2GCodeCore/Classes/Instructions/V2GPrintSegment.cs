@@ -30,7 +30,7 @@ namespace Voxel2GCodeCore.Instructions
         {
             V2GPrintPosition prevPrinterPosition = printer.Position;
             printer.F = this.PrintPosition.Speed;
-            printer.SetPosition(this.PrintPosition);
+            printer.SetPosition(this.PrintPosition, s);
             double length = printer.Position.DistanceTo(prevPrinterPosition);
       
             // Switch Extruder Head if Needed
@@ -47,6 +47,8 @@ namespace Voxel2GCodeCore.Instructions
             s.Append(" Z" + Math.Round(printer.Position.Z, 4));
             printer.IncreaseE(s, this.PrintPosition.MaterialAmount, length, this.PrintPosition.MixPercentage);
             s.Append(" F" + Math.Round(printer.F, 4));
+
+            s.Append("\n(Debug: printer.ZOffset:"+printer.settings.ZOffset+", printer.Position.Z: "+printer.Position.Z+")");
         }
 
     }
