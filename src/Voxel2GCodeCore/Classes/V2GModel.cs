@@ -34,7 +34,7 @@ namespace Voxel2GCodeCore
             this.Path.Add(Printable.GenerateInstructions())
         }
         */
-        
+
         /// <summary>
         /// Append a PrintPolyline as a path.
         /// </summary>
@@ -55,7 +55,7 @@ namespace Voxel2GCodeCore
                 }
                 path.Segments.Add(seg);
             }
-            Paths.Add(path); 
+            Paths.Add(path);
         }
 
         // TODO: Implement with V2GMovement
@@ -259,7 +259,7 @@ namespace Voxel2GCodeCore
             AppendAsPath(pl, (path, lastP, p, len) => {
                 PrintInstruction s = null;
 
-               // path.Segments.Add(new PrintMovement()); 
+               // path.Segments.Add(new PrintMovement());
                 if (p.X<0.0)
                 {
                     s = new PrintWaveSegment();
@@ -306,7 +306,7 @@ namespace Voxel2GCodeCore
 
             Version versionInfo = Assembly.GetExecutingAssembly().GetName().Version;
             String versionStr = String.Format("{0}.{1}.{2}.{3}", versionInfo.Major.ToString(), versionInfo.Minor.ToString(), versionInfo.Build.ToString(), versionInfo.Revision.ToString());
-            
+
             // Header
             s.Append("\n; Voxel2GCodeLib " + versionStr);
             s.Append("\n; Material Gradients with Monolith");
@@ -316,8 +316,8 @@ namespace Voxel2GCodeCore
             s.Append("\n");
 
             // Printer settings.
-            s.Append("\n; Filament diameter: " + printer.settings.FilamentThickness + " mm");
-            s.Append("\n; Layer height: " + printer.settings.LayerHeight + " mm");
+            //s.Append("\n; Filament diameter: " + printer.settings.FilamentThickness + " mm");
+            //s.Append("\n; Layer height: " + printer.settings.LayerHeight + " mm");
 
             // Warm head up
             if(printer.settings.ShouldHeatUpOnStart)
@@ -334,7 +334,7 @@ namespace Voxel2GCodeCore
                 s.Append("\nT1");
                 s.Append("\nM109 S" + printer.settings.T1Temperature + "; wait for extruder 1 to reach temp");
             }
-            
+
             // Initialization.
             s.Append("\n\n; Initialization");
             s.Append("\nG91");
@@ -362,10 +362,12 @@ namespace Voxel2GCodeCore
             s.Append("\n\n; Move tool-head backwards.");
             s.Append("\nG91");
             s.Append("\nG1 E-3.00000 F1800.000");
-            s.Append("\nG90");
-            s.Append("\nG1 Z" + (printer.Position.Z + 0.5));
-            s.Append("\nG1 X" + printer.settings.EndPoint.X + " Y" + printer.settings.EndPoint.Y + " F7200.000");
+            s.Append("\nG90"); // absolute positioning
+            printer.Position.Z += 0.5;
+            s.Append("\nG1 Z" + printer.Position.Z);
+            s.Append("\nG1 X" + printer.settings.EndPoint.X + " Y" + printer.settings.EndPoint.Y + " F3400.000");
             printer.Position = printer.settings.EndPoint;
+            s.Append("\nG91"); // incremental positioning
             s.Append("\nG1 Z15");
 
             // Cool down.
