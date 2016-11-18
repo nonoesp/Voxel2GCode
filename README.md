@@ -20,6 +20,8 @@ In a nutshell, Voxel2GCode provides five tools:
 * [Voxel2GCode.zip](http://gettingarchitecturedone.com/files/Voxel2GCode.zip)
 * The voxel utilities of V2G require you to install [Monolith](http://monolith.zone/download), everything else should work fine without it.
 
+![Material Gradients with Monolith](docs/img/161117-artifacts.gif)
+
 ## Table of Contents
 
 * [Installation](#installation)
