@@ -114,8 +114,8 @@ namespace Voxel2GCodeCore
             this.E = 0;
             this.A = 0;
             s.Append("\nT" + (this.Head));
-            s.Append("\nG92 E0.0000");
-            if (this.Head == 3) s.Append("\nG92 A0.0000"); // e.g. Dual PRO right filament
+            s.Append("\nG92 E0.0");
+            if (this.Head == 3) s.Append("\nG92 A0.0"); // e.g. Dual PRO right filament
         }
 
         /// <summary>
@@ -150,9 +150,13 @@ namespace Voxel2GCodeCore
         /// <param name="p">A PrintPoint.</param>
         public void SetPosition(V2GPrintPosition p, StringBuilder s = null)
         {
-            if ( s != null && this.Position.Z != p.Z + this.settings.ZOffset )
+            if ( s != null && Math.Abs(this.Position.Z - p.Z + this.settings.ZOffset) > 0.01 )
             {
-                //if(this.settings.IsVerbose) s.Append("\n(Z Changed)");
+                if (this.settings.IsVerbose)
+                {
+                    s.Append("\n(Z Changed)");
+                    s.Append(" (from " + this.Position.Z + " to " + p.Z +")");
+                }
                 this.ResetHead(s);
             }
             this.Position = new V2GPrintPosition(p.X, p.Y, p.Z + this.settings.ZOffset);

@@ -304,8 +304,12 @@ namespace Voxel2GCodeCore
             // - Header.
             // - Model-specific initialization.
 
+            // If left as "0.1.*" the version number will fill the Build and Revision parameters automatically.
+            // Build will be the number is the number of days since the year 2000
+            // Revision will be the number of seconds since midnight (divided by 2)
+
             Version versionInfo = Assembly.GetExecutingAssembly().GetName().Version;
-            String versionStr = String.Format("{0}.{1}.{2}.{3}", versionInfo.Major.ToString(), versionInfo.Minor.ToString(), versionInfo.Build.ToString(), versionInfo.Revision.ToString());
+            String versionStr = String.Format("{0}.{1}.{2}.{3}", versionInfo.Major.ToString(), versionInfo.Minor.ToString(), (versionInfo.Build - 6082).ToString(), versionInfo.Revision.ToString());
 
             // Header
             s.Append("\n; Voxel2GCodeLib " + versionStr);
@@ -359,13 +363,16 @@ namespace Voxel2GCodeCore
             // - Cool down
 
             // Move tool-head backwards.
-            s.Append("\n\n; Move tool-head backwards.");
+            s.Append("\n\n; Move tool-head to end point and 15 mm up.");
             s.Append("\nG91");
             s.Append("\nG1 E-3.00000 F1800.000");
             s.Append("\nG90"); // absolute positioning
             printer.Position.Z += 0.5;
-            s.Append("\nG1 Z" + printer.Position.Z);
-            s.Append("\nG1 X" + printer.settings.EndPoint.X + " Y" + printer.settings.EndPoint.Y + " F3400.000");
+            s.Append("\nG1 Z" + Math.Round(printer.Position.Z, 4));
+            s.Append("\nG1 X" + Math.Round(printer.settings.EndPoint.X, 4) +
+                         " Y" + Math.Round(printer.settings.EndPoint.Y, 4) +
+                         " Z" + Math.Round(printer.settings.EndPoint.Z, 4) +
+                         " F3400.000");
             printer.Position = printer.settings.EndPoint;
             s.Append("\nG91"); // incremental positioning
             s.Append("\nG1 Z15");
