@@ -4,7 +4,8 @@
 
 ![Material Gradients with Monolith](docs/img/main-header.jpg)
 
-`Voxel2GCode` is a project which aims for a flexible, customizable workflow for 3D printing, which started as part of the **Material Gradients with Monolith** project by [Nono Martínez Alonso](http://nono.ma) while working with the Autodesk Generative Design Group, during the summer of 2016. As an effort to simplify how instructions are sent to 3D printers, the project is structured to make the implementation of custom printing and slicing workflows easy, and to fabricate artifacts from geometric objects and voxel-based models with low cost multi-material 3D printers.
+`Voxel2GCode` is a project which aims for a flexible, customizable workflow for 3D printing, which started as part of the **Material Gradients with Monolith** project by [Nono Martínez Alonso](http://nono.ma) while working with the Autodesk Generative Design Group, during the summer of 2016.
+The project facilitates the generation of custom printing and slicing workflows, in an effort to simplify the delivery of instructions to 3D printers and the fabrication of artifacts from geometric objects and voxel-based models with low cost multi-material 3D printers.
 
 [Tweet this](https://twitter.com/intent/tweet?text=Voxel2GCode%20transforms%20geometry%20%26%20voxel-based%20models%20into%203D-printable%20instructions%20w/%20%23gh3d%20@DynamoBIM%20github.com/nonoesp/Voxel2GCode%20by%20@nonoesp).
 

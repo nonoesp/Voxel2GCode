@@ -60,7 +60,7 @@ namespace Voxel2GCodeCore
         /// <summary>
         /// Offset from the bed to the extrusion in mm.
         /// </summary>
-        public double ZOffset = 0.2;
+        public double ZOffset = 0.0;
 
         /// <summary>
         /// Printer start point.
@@ -76,7 +76,7 @@ namespace Voxel2GCodeCore
         /// Determines wether the generated G-code should contain detailed comments or not.
         /// </summary>
         public bool IsVerbose = false;
-        
+
         /// <summary>
         /// Constructor of PrintSettings.
         /// </summary>

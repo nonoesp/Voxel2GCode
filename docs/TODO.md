@@ -1,8 +1,6 @@
 # TODO
 
 - [ ] Fix `Force Top Layer` in `Slice Planes` component.
-- [ ] Remove redundant command parameters (i.e. don't print unchanged X, Y, Z, E values)
-- [ ] Change ZOffset default to 0.0.
 
 ## Slicer additions (tentative)
 

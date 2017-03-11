@@ -1,9 +1,10 @@
 # Release Notes
 
-## 0.1.2
+## 0.1.2 (master)
 
 This is the current version in progress.
 
+- [X] Change ZOffset default to 0.0.
 - [X] [Core] Removed redundant G-code. (Coordinates and speeds only appear on G1 commands when they change, which reduces file sizes.)
 - [X] [Core] Fixed resetting head comparison, now it checks for absolute different between Z coordinates rather than comparing them (this was returning false for a difference of 0.000000001 in coordinates).
 - [X] [Core] EndPoint behavior fixed to incremental positioning (G91).
