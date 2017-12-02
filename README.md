@@ -242,4 +242,4 @@ I tweet at [@nonoesp](http://www.twitter.com/nonoesp) and write at [Getting Simp
 
 ## Contributing
 
-In its early stages, Voxel2GCode sets a base structure for growth and flexibility. Any kind of contribution or collaboration is welcome. If you are interested in playing around with this library [shot me a tweet](https://twitter.com/intent/tweet?text=Hi%20@nonoesp,%20I%27ve%20seen%20Voxel2GCode%20and%20your-message-here.).
+In its early stages, Voxel2GCode sets a base structure for growth and flexibility. Any kind of contribution or collaboration is welcome. If you are interested in playing around with this library [shoot me a tweet](https://twitter.com/intent/tweet?text=Hi%20@nonoesp,%20I%27ve%20seen%20Voxel2GCode%20and%20your-message-here.).
